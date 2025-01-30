@@ -1,0 +1,25 @@
+{
+    "nextId": 2,
+    "logins": [
+        {
+            "id": 1,
+            "hostname": "https://www.buckinghampalace.com",
+            "httpRealm": null,
+            "formSubmitURL": "",
+            "usernameField": "",
+            "passwordField": "",
+            "encryptedUsername": "MDIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECH8feh5sx5cXBAi/9Yd+pUAaFA==",
+            "encryptedPassword": "MEIEEPgAAAAAAAAAAAAAAAAAAAEwFAYIKoZIhvcNAwcECGIRibEEEEyvBBgYVY07RZfCQelyMO41WyWBf6ROSsVZFsA=",
+            "guid": "{b6b48d5b-c243-42e2-adef-2763a0d59e88}",
+            "encType": 1,
+            "timeCreated": 1710585658791,
+            "timeLastUsed": 1710585658791,
+            "timePasswordChanged": 1710585819557,
+            "timesUsed": 1,
+            "encryptedUnknownFields": null
+        }
+    ],
+    "potentiallyVulnerablePasswords": [],
+    "dismissedBreachAlertsByLoginGUID": {},
+    "version": 3
+}
