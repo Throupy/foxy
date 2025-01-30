@@ -4,6 +4,12 @@ Foxy is a python class which will extract and decrypt firefox passwords from a f
 ## Usage
 Usage is very simple, and I might add argument parsing at some point
 
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+pip install -r requirements.txt
+```
+
 ```python
 foxy = Foxy("<PROFILE_DIRECTORY>")
 decrypted_passwords = foxy.retrieve_passwords()
