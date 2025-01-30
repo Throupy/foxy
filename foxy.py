@@ -1,3 +1,5 @@
+"""Class Definition for extracting and decrypting saved Firefox passwords"""
+
 import os
 import json
 import sqlite3
@@ -35,7 +37,7 @@ class Foxy:
 
         if encryption_algorithm == TRIPLE_DES_OID:
             raise NotImplementedError("3DES Not yet implemented... standby")
-        elif encryption_algorithm == PBES2_OID:
+        if encryption_algorithm == PBES2_OID:
             encryption_options_base = encrypted_key_information[0][0][1][0][1]
             salt = encryption_options_base[0].asOctets()
             rounds = int(encryption_options_base[1])
@@ -110,12 +112,14 @@ class Foxy:
         ciphertext = asn1_object[0][2].asOctets()
         return key_id, iv, ciphertext
 
-    def _decrypt_login_data(self, encrypted_credentials: List[List[str]], decryption_key: bytes) -> List[List[str]]:
+    def _decrypt_login_data(
+        self, encrypted_credentials: List[List[str]], decryption_key: bytes
+    ) -> List[List[str]]:
         """
         Decrypt usernames and passwords from login.json using AES256CBC
 
         Arguments:
-            encrypted_credentials: List containing lists in format [hostname, encUsername, encPassword]
+            encrypted_credentials: List containing lists: [hostname, encUsername, encPassword]
             decryption_key: 24-byte 3DES key used for decryption
 
         Returns:
@@ -151,11 +155,12 @@ class Foxy:
 
     def _parse_logins_json(self) -> List[List[str]]:
         """
-        Parse the logins.json file and retreive hostnames, encrypted usernames, and encrypted passwords
+        Parse the logins.json file and retreive hostnames, 
+        encrypted usernames, and encrypted passwords
 
         Returns:
-            A list of lists, each inner list contains hostname, encrypted_username, encrypted_password
-            respectively.
+            A list of lists, each inner list contains hostname, 
+            encrypted_username, encrypted_password respectively.
         """
         logins = []
 
